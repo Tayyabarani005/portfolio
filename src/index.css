@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #F7F3E8;
+  --surface: #FBF9F2;
+  --ink: #1F1C17;
+  --muted: #6E685B;
+  --butter: #F6DE8D;
+  --sage: #C5D8A4;
+  --peach: #F6C6A8;
+  --border: rgba(31, 28, 23, 0.12);
+  --border-strong: rgba(31, 28, 23, 0.22);
+  
+  --font-display: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Utilities */
+.font-display {
+  font-family: var(--font-display);
+  font-feature-settings: "ss01" on, "ss02" on;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Expressive Display font variations */
+.display-morph {
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 100, 'wght' 750;
+  transition: font-variation-settings 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.display-morph:hover {
+  font-variation-settings: 'wdth' 85, 'wght' 800;
+}
+
+/* Small labels: Instrument Sans, uppercase, letter-spaced, >= 13px, muted, NO monospace */
+.label-caps {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Butter highlighter underline for links */
+.link-highlighter {
+  position: relative;
+  color: var(--ink);
+  text-decoration: none;
+  background-image: linear-gradient(120deg, var(--butter) 0%, var(--butter) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 35%;
+  background-position: 0 88%;
+  transition: background-size 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.link-highlighter:hover {
+  background-size: 100% 100%;
+}
+
+/* Accessible focus visible outlines: ink outline, zero blue */
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+input, textarea, select {
+  caret-color: var(--ink);
+  accent-color: var(--butter);
+}
+
+input::selection, textarea::selection, select::selection {
+  background: var(--butter);
+  color: var(--ink);
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill,
+input:-webkit-autofill:hover, textarea:-webkit-autofill:hover, select:-webkit-autofill:hover,
+input:-webkit-autofill:focus, textarea:-webkit-autofill:focus, select:-webkit-autofill:focus,
+input:autofill, textarea:autofill, select:autofill {
+  -webkit-text-fill-color: var(--ink);
+  box-shadow: 0 0 0 1000px var(--paper) inset;
+  caret-color: var(--ink);
+}
+
+/* Subtle grain texture overlay */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Drifting blurred background blobs */
+@keyframes drift-1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.08); }
+  66% { transform: translate(-25px, 25px) scale(0.95); }
+}
+
+@keyframes drift-2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(-35px, 30px) scale(0.96); }
+  66% { transform: translate(25px, -35px) scale(1.06); }
+}
+
+@keyframes drift-3 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(20px, 35px) scale(1.05); }
+}
+
+.animate-blob-1 {
+  animation: drift-1 18s ease-in-out infinite;
+}
+
+.animate-blob-2 {
+  animation: drift-2 22s ease-in-out infinite;
+}
+
+.animate-blob-3 {
+  animation: drift-3 26s ease-in-out infinite;
+}
+
+/* Custom scrollbar matching paper aesthetic */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(110, 104, 91, 0.28);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(110, 104, 91, 0.5);
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .display-morph {
+    transition: none !important;
+  }
+  .animate-blob-1, .animate-blob-2, .animate-blob-3 {
+    animation: none !important;
+  }
+}

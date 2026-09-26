@@ -1,0 +1,85 @@
+import { ExperienceItem } from '../types.ts';
+
+export const experiences: ExperienceItem[] = [
+  {
+    id: 'exp-algorithm',
+    company: 'Algorithm',
+    period: '04/2026 Present',
+    year: '2026',
+    location: 'Peshawar, Pakistan',
+    roles: [
+      { title: 'Software Engineer', period: '08/2026 Present' },
+      { title: 'Software Engineering Intern', period: '04/2026 07/2026' },
+    ],
+    whatChanged: 'Previously Software Engineering Intern, now full-time Software Engineer developing core features on Outpost multi-tenant SaaS.',
+    summary: 'Building full-stack web applications, multi-tenant architectures, and AI-powered product platforms.',
+    highlights: [
+      'Developing Outpost, a multi-tenant SaaS platform: candidate management, hiring workflows, Jarvis AI agent layer, assessment modules, and platform administration.',
+      'Previously contributed to MedLens AI healthcare platform frontend (patient management, encounter recording workflows) and built its marketing site with Astro.',
+      'Constructed responsive UI with TanStack Router, TanStack Query, and Mantine UI; engineered backend services in Node.js, Express, and MongoDB.',
+    ],
+    techString: 'TypeScript, React, TanStack Router/Query, Mantine UI, Node.js, Express, MongoDB, Astro',
+    technologies: ['TypeScript', 'React', 'TanStack Router', 'TanStack Query', 'Mantine UI', 'Node.js', 'Express', 'MongoDB', 'Astro'],
+    keyOutcome: 'Progressed from Intern to Software Engineer while delivering core SaaS modules and marketing platforms.',
+  },
+  {
+    id: 'exp-lead',
+    company: 'Algorithm Training Program',
+    period: '09/2025 Present',
+    year: '2025',
+    location: 'Peshawar, Pakistan',
+    roles: [
+      { title: 'Tech Lead', period: '09/2025 Present' },
+    ],
+    whatChanged: 'Stepped into engineering leadership mentoring junior developers and driving architecture decisions on SkillSwap.',
+    summary: 'Mentoring junior developers and leading development of SkillSwap, a peer-to-peer skill exchange platform.',
+    highlights: [
+      'Led development and successful completion of SkillSwap: admin dashboard, access control, real-time chat, meeting scheduling, and platform analytics.',
+      'Authored technical proposal choosing Prisma over Sequelize for type-safe queries and cleaner database migrations with PostgreSQL.',
+      'Established codebase conventions, coordinated task planning, and deployed production apps to Render and Supabase.',
+    ],
+    techString: 'Next.js, TypeScript, Prisma ORM, PostgreSQL, Tailwind CSS, shadcn/ui, Supabase, Render',
+    technologies: ['Next.js', 'TypeScript', 'Prisma ORM', 'PostgreSQL', 'Tailwind CSS', 'shadcn/ui', 'Supabase', 'Render'],
+    keyOutcome: 'Led team delivery of major platform phases, architectural proposals, and production deployments.',
+  },
+  {
+    id: 'exp-freelance',
+    company: 'Freelance & Independent Projects',
+    period: '12/2025 04/2026',
+    year: '2025',
+    location: 'Peshawar, Pakistan',
+    roles: [
+      { title: 'Full Stack Developer', period: '12/2025 04/2026' },
+    ],
+    whatChanged: 'Took full end-to-end project ownership from requirement gathering and UI design to Docker containerization and CI/CD.',
+    summary: 'Delivered web applications and marketing sites with complete end-to-end ownership.',
+    highlights: [
+      'Built management platform for Healers Institute for Children with Special Needs (student tracking, fee management, Docker Compose & GitHub Actions CI/CD).',
+      'Engineered modern, SEO-optimized marketing platform for Emfive Business Services LLC (Dubai) with Astro, TypeScript, and Tailwind CSS.',
+      'Created Sunnah Table, an educational web platform on foods in Hadith and nutritional science.',
+    ],
+    techString: 'Next.js, Astro, Tailwind CSS, shadcn/ui, Node.js, Express, Docker, CI/CD',
+    technologies: ['Next.js', 'Astro', 'Tailwind CSS', 'shadcn/ui', 'Node.js', 'Express', 'Docker', 'CI/CD'],
+    keyOutcome: 'Delivered production platforms across education, health, and corporate consulting with full lifecycle ownership.',
+  },
+  {
+    id: 'exp-codematics',
+    company: 'Codematics',
+    period: '07/2025 09/2025',
+    year: '2025',
+    location: 'Abbottabad, Pakistan',
+    roles: [
+      { title: 'Backend Developer Intern', period: '07/2025 09/2025' },
+    ],
+    whatChanged: 'Built first production backend services and learned relational/document database design.',
+    summary: 'Built backend services, REST APIs, and database schemas.',
+    highlights: [
+      'Built backend REST APIs with Node.js and Express.js.',
+      'Designed schemas and optimized queries in SQL and MongoDB.',
+      'Gained hands-on experience in PHP (Laravel) backend development.',
+    ],
+    techString: 'Node.js, Express.js, MongoDB, SQL, PHP, Laravel',
+    technologies: ['Node.js', 'Express.js', 'MongoDB', 'SQL', 'PHP', 'Laravel'],
+    keyOutcome: 'Solidified backend architecture fundamentals across multiple stacks.',
+  },
+];
